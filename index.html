@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiessa | Studio-to-street activewear</title>
+<meta name="description" content="Wear-tested activewear, matching sets and loungewear for studio to street. Complimentary shipping and returns.">
+<style>
+:root{--ink:#111;--paper:#fff;--mist:#f3f2f0;--line:#e3e1de;--mute:#6b6966;--accent:#8a7461}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.bar{background:var(--ink);color:#fff;text-align:center;font-size:12px;letter-spacing:.08em;padding:9px 12px}
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px;gap:16px}
+.logo{font-size:26px;font-weight:300;letter-spacing:.2em}
+nav{display:flex;gap:28px;font-size:14px}
+nav a{padding:22px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--ink)}
+.tools{display:flex;gap:18px;align-items:center;font-size:14px}
+.cartbtn{display:flex;gap:6px;align-items:center}
+.count{background:var(--ink);color:#fff;border-radius:99px;min-width:20px;height:20px;font-size:12px;display:grid;place-items:center;padding:0 6px}
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;padding:48px 24px;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.45)),url(images/hero.jpg) center 20%/cover,linear-gradient(120deg,#9c8b7a,#4d4a47 70%)}
+.hero h1{font-size:clamp(40px,8vw,96px);font-weight:300;line-height:1;letter-spacing:-.02em;max-width:12ch}
+.hero p{margin:16px 0 24px;max-width:40ch}
+.btn{display:inline-block;background:#fff;color:var(--ink);padding:14px 28px;font-size:14px;letter-spacing:.04em}
+.btn.dark{background:var(--ink);color:#fff}
+.btn:hover{opacity:.85}
+.trend{padding:48px 24px 8px}
+.trend h2,.sec h2{font-size:22px;font-weight:400;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--ink);padding:10px 20px;font-size:14px;border-radius:99px}
+.chip:hover,.chip.on{background:var(--ink);color:#fff}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;padding:32px 24px}
+.cat{aspect-ratio:4/5;display:flex;align-items:flex-end;padding:20px;color:#fff;font-size:18px;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45)),var(--img,none) center/cover,var(--c)}
+.cat:hover{filter:brightness(1.08)}
+.sec{padding:32px 24px 56px}
+.row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:24px 14px}
+.card .img{aspect-ratio:3/4;background:var(--bg,#cfc8c0);position:relative;display:grid;place-items:center;transition:background .25s}
+.card .img span{font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.85)}
+.card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:#fff;font-size:11px;padding:3px 8px}
+.card h3{font-size:15px;font-weight:400;margin-top:10px}
+.card .meta{display:flex;justify-content:space-between;color:var(--mute);font-size:14px}
+.sw{display:flex;gap:7px;margin:8px 0}
+.sw button{width:18px;height:18px;border-radius:50%;background:var(--c);border:1px solid var(--line)}
+.sw button[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:2px}
+.buy{display:flex;gap:6px}
+select{flex:0 0 78px;border:1px solid var(--line);padding:9px 6px;font:inherit;font-size:14px;background:#fff}
+.add{flex:1;background:var(--ink);color:#fff;padding:9px;font-size:14px}
+.add:hover{opacity:.85}
+.band{background:var(--mist);padding:56px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
+.band h4{font-size:16px;font-weight:500;margin-bottom:4px}
+.band p{color:var(--mute);font-size:14px}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.split div{padding:72px 32px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.45)),var(--img,none) center/cover,var(--c)}
+.split h3{font-size:30px;font-weight:300}
+footer{padding:48px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:28px;font-size:14px;border-top:1px solid var(--line)}
+footer h5{font-size:14px;margin-bottom:10px}
+footer li{list-style:none;color:var(--mute);margin:6px 0}
+footer ul{padding:0}
+.news form{display:flex;margin-top:8px}
+.news input{flex:1;min-width:0;border:1px solid var(--ink);padding:10px;font:inherit}
+.news button{background:var(--ink);color:#fff;padding:0 16px}
+.fine{grid-column:1/-1;color:var(--mute);font-size:12px}
+.veil{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.veil.on{opacity:1;pointer-events:auto}
+aside{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:#fff;z-index:50;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column}
+aside.on{transform:none}
+aside header{position:static;height:60px}
+.lines{flex:1;overflow:auto;padding:8px 24px}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
+.line i{background:var(--img,none) center/cover,var(--c);aspect-ratio:3/4}
+.q{display:flex;align-items:center;gap:10px;margin-top:6px}
+.q button{width:26px;height:26px;border:1px solid var(--line)}
+.rm{color:var(--mute);text-decoration:underline;font-size:12px}
+.foot{padding:20px 24px;border-top:1px solid var(--line)}
+.tot{display:flex;justify-content:space-between;margin-bottom:6px}
+.empty{padding:40px 0;color:var(--mute);text-align:center}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 20px;font-size:14px;opacity:0;transition:.25s;z-index:60;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){nav{display:none}header{padding:0 16px}.logo{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="bar">COMPLIMENTARY SHIPPING &amp; RETURNS</div>
+<header>
+  <a class="logo" href="#top" aria-label="Quiessa home">Quiessa</a>
+  <nav aria-label="Main">
+    <a href="#new">Women</a><a href="#men">Men</a><a href="#cats">Accessories</a><a href="#cats">Shoes</a><a href="#new">Sale</a>
+  </nav>
+  <div class="tools"><a href="#">Account</a>
+    <button class="cartbtn" id="open" aria-label="Open cart">Cart <span class="count" id="count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div>
+    <h1>Studio to street, in one fit.</h1>
+    <p>New matching sets, jackets and everyday layers, wear-tested for movement and made to last.</p>
+    <a class="btn" href="#new">Shop new in</a>
+  </div>
+</section>
+
+<section class="trend">
+  <h2>Trending now</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="Sets">Matching sets</button>
+    <button class="chip" data-f="Tops">Tops</button>
+    <button class="chip" data-f="Bottoms">Leggings &amp; trousers</button>
+    <button class="chip" data-f="Layers">Jackets &amp; sweatshirts</button>
+  </div>
+</section>
+
+<section class="cats" id="cats">
+  <a class="cat" href="#new" style="--c:#7d6d5e;--img:url(images/cat-sets.jpg)">Matching sets</a>
+  <a class="cat" href="#new" style="--c:#3f4a57;--img:url(images/cat-leggings.jpg)">Leggings</a>
+  <a class="cat" href="#new" style="--c:#a08f80;--img:url(images/cat-hoodies.jpg)">Sweatshirts &amp; hoodies</a>
+  <a class="cat" href="#men" style="--c:#2b2b2b;--img:url(images/cat-men.jpg)">Men</a>
+</section>
+
+<section class="sec" id="new">
+  <div class="row"><h2>Best sellers</h2><span id="shown" style="color:var(--mute);font-size:14px"></span></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="split" id="men">
+  <div style="--c:#5a5f66;--img:url(images/banner-men.jpg)"><h3>Performance for him</h3><a class="btn" href="#new" style="align-self:flex-start">Shop men</a></div>
+  <div style="--c:#b3a595;--img:url(images/banner-lounge.jpg)"><h3>Loungewear edit</h3><a class="btn" href="#new" style="align-self:flex-start">Shop lounge</a></div>
+</section>
+
+<section class="band">
+  <div><h4>Complimentary shipping &amp; returns</h4><p>On every order, no minimum.</p></div>
+  <div><h4>Wear-tested fit</h4><p>Every piece is tested in motion before it is sold.</p></div>
+  <div><h4>New to Quiessa? Start here</h4><p>Find your first set with our fit and fabric guide.</p></div>
+  <div><h4>Gift cards</h4><p>Delivered instantly by email.</p></div>
+</section>
+</main>
+
+<footer>
+  <div><h5>Shop</h5><ul><li>Women</li><li>Men</li><li>Accessories</li><li>Gift cards</li></ul></div>
+  <div><h5>Help</h5><ul><li>Shipping</li><li>Returns</li><li>Size guide</li><li>Contact us</li></ul></div>
+  <div><h5>Company</h5><ul><li>About</li><li>Careers</li><li>Stockists</li></ul></div>
+  <div class="news"><h5>Get early access</h5><p style="color:var(--mute)">New drops and offers, straight to your inbox.</p>
+    <form id="nf"><input type="email" required placeholder="Email address" aria-label="Email address"><button>Join</button></form></div>
+  <p class="fine">&copy; 2026 Quiessa. Demo storefront: replace the sample products, prices and checkout with your own.</p>
+</footer>
+
+<div class="veil" id="veil"></div>
+<aside id="cart" aria-label="Cart" aria-hidden="true">
+  <header><strong>Your cart</strong><button id="close" aria-label="Close cart">Close</button></header>
+  <div class="lines" id="lines"></div>
+  <div class="foot">
+    <div class="tot"><span>Subtotal</span><strong id="sub">₦0</strong></div>
+    <p style="color:var(--mute);font-size:12px;margin-bottom:12px">Shipping and returns are complimentary.</p>
+    <button class="btn dark" style="width:100%" id="checkout">Checkout</button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const P=[
+ {id:1,n:"Airlift Sculpt Set",c:"Sets",p:185000,t:"Best seller",cl:[["Steel grey","#8d9199"],["Espresso","#4a3a32"],["Black","#1c1c1c"]]},
+ {id:2,n:"Airbrush High-Waist Legging",c:"Bottoms",p:96000,t:"New",cl:[["Black","#1c1c1c"],["Toasted almond","#b79b84"],["Navy","#2c3a55"]]},
+ {id:3,n:"Cropped Rib Tank",c:"Tops",p:48000,t:"",cl:[["White","#e9e6e1"],["Ballet pink","#e3bfc3"],["Black","#1c1c1c"]]},
+ {id:4,n:"Cloud Oversized Hoodie",c:"Layers",p:132000,t:"Best seller",cl:[["Oatmeal heather","#cbbfb0"],["Gravel","#8b8883"],["Black","#1c1c1c"]]},
+ {id:5,n:"Wide-Leg Studio Trouser",c:"Bottoms",p:112000,t:"New",cl:[["Eclipse blue","#33465f"],["Gravel","#8b8883"],["Black","#1c1c1c"]]},
+ {id:6,n:"Cinch Bomber Jacket",c:"Layers",p:178000,t:"",cl:[["Espresso","#4a3a32"],["Black","#1c1c1c"],["Steel grey","#8d9199"]]},
+ {id:7,n:"Seamless Lounge Set",c:"Sets",p:165000,t:"",cl:[["Raisinette","#5b3a45"],["Oatmeal heather","#cbbfb0"],["Black","#1c1c1c"]]},
+ {id:8,n:"Pleated Tennis Skirt",c:"Bottoms",p:78000,t:"New",cl:[["White","#e9e6e1"],["Navy","#2c3a55"],["Black","#1c1c1c"]]}
+];
+const $=s=>document.querySelector(s),fmt=n=>"₦"+n.toLocaleString("en-NG");
+const sel={};let cart=[],filter="all";
+P.forEach(p=>sel[p.id]=0);
+
+function render(){
+  const list=P.filter(p=>filter==="all"||p.c===filter);
+  $("#shown").textContent=list.length+" items";
+  $("#grid").innerHTML=list.map(p=>`<article class="card">
+    <div class="img" style="--bg:${p.cl[sel[p.id]][1]}">${p.t?`<span class="tag" style="color:#111;letter-spacing:0">${p.t}</span>`:""}<span>Quiessa</span><img src="images/p${p.id}.jpg" alt="${p.n}" loading="lazy" onerror="this.remove()"></div>
+    <h3>${p.n}</h3>
+    <div class="meta"><span>${p.cl[sel[p.id]][0]}</span><span>${fmt(p.p)}</span></div>
+    <div class="sw" role="group" aria-label="Colour">${p.cl.map((c,i)=>`<button style="--c:${c[1]}" data-sw="${p.id}:${i}" aria-label="${c[0]}" aria-pressed="${sel[p.id]===i}"></button>`).join("")}</div>
+    <div class="buy"><select id="sz${p.id}" aria-label="Size"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+    <button class="add" data-add="${p.id}">Add to cart</button></div></article>`).join("");
+}
+function drawCart(){
+  const n=cart.reduce((a,l)=>a+l.q,0),t=cart.reduce((a,l)=>a+l.q*l.p,0);
+  $("#count").textContent=n;$("#sub").textContent=fmt(t);
+  $("#lines").innerHTML=cart.length?cart.map((l,i)=>`<div class="line"><i style="--c:${l.hex};--img:url(images/p${l.id}.jpg)"></i>
+    <div><div>${l.n}</div><div style="color:var(--mute)">${l.color} / ${l.size}</div>
+    <div class="q"><button data-q="${i}:-1" aria-label="Decrease">&minus;</button>${l.q}<button data-q="${i}:1" aria-label="Increase">+</button></div></div>
+    <div style="text-align:right">${fmt(l.p*l.q)}<br><button class="rm" data-rm="${i}">Remove</button></div></div>`).join(""):`<p class="empty">Your cart is empty. Add something you love.</p>`;
+}
+function toggle(on){$("#cart").classList.toggle("on",on);$("#veil").classList.toggle("on",on);$("#cart").setAttribute("aria-hidden",!on)}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),1800)}
+
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button,a");if(!b)return;const d=b.dataset;
+  if(d.f){filter=d.f;document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",c===b));render();$("#new").scrollIntoView()}
+  if(d.sw){const[i,k]=d.sw.split(":").map(Number);sel[i]=k;render()}
+  if(d.add){const p=P.find(x=>x.id==d.add),c=p.cl[sel[p.id]],size=$("#sz"+p.id).value;
+    const f=cart.find(l=>l.id===p.id&&l.color===c[0]&&l.size===size);
+    f?f.q++:cart.push({id:p.id,n:p.n,p:p.p,color:c[0],hex:c[1],size,q:1});
+    drawCart();toast(p.n+" added to cart")}
+  if(d.q){const[i,s]=d.q.split(":").map(Number);cart[i].q+=s;if(cart[i].q<1)cart.splice(i,1);drawCart()}
+  if(d.rm){cart.splice(+d.rm,1);drawCart()}
+});
+$("#open").onclick=()=>toggle(true);$("#close").onclick=$("#veil").onclick=()=>toggle(false);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")toggle(false)});
+$("#checkout").onclick=()=>toast(cart.length?"Connect your payment provider to enable checkout":"Your cart is empty");
+$("#nf").onsubmit=e=>{e.preventDefault();e.target.reset();toast("Thanks, you're on the list")};
+render();drawCart();
+</script>
+</body>
+</html>
